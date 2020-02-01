@@ -15,7 +15,7 @@ public class GameState : ScriptableObject
     public int sets = 0;
 
     // constants
-    static string PLAY = "PLAY";
+    public static string PLAY = "PLAY";
 
 
     // TODO: define the set of states for the game

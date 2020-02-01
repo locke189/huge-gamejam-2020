@@ -8,11 +8,21 @@ public class InputController : MonoBehaviour
     [SerializeField] string axis = "Joystick1";
     [SerializeField] GameState state;
     [SerializeField] float debounceTime;
-    string UP = "UP";
-    string DOWN = "DOWN";
-    string LEFT = "LEFT";
-    string RIGHT = "RIGHT";
     string prevArrowKey;
+
+    // Constants
+    readonly string UP = "UP";
+    readonly string DOWN = "DOWN";
+    readonly string LEFT = "LEFT";
+    readonly string RIGHT = "RIGHT";
+    readonly string PLAY_STATE = "PLAY";
+    readonly string X_AXIS = "X";
+    readonly string Y_AXIS = "PLAY";
+    readonly string BUTTON_1 = "A";
+    readonly string BUTTON_2 = "B";
+    readonly string BUTTON_3 = "C";
+    readonly string BUTTON_4 = "D";
+
 
     private void Start()
     {
@@ -21,7 +31,7 @@ public class InputController : MonoBehaviour
 
     void Update()
     {
-        if (state.gameStateName == "PLAY")
+        if (state.gameStateName == PLAY_STATE)
         {
             StartCoroutine(CheckSequence(state.GetArrow(state.hits),state.GetTool(state.hits)));
         }
@@ -48,8 +58,8 @@ public class InputController : MonoBehaviour
 
     bool CheckArrowPressed()
     {
-        float axisX = Input.GetAxis(axis + "X");
-        float axisY = Input.GetAxis(axis + "Y");
+        float axisX = Input.GetAxis(axis + X_AXIS);
+        float axisY = Input.GetAxis(axis + Y_AXIS);
 
         if (axisX == 1 || axisX == -1 || axisY == 1 || axisY == -1) {
             return true;
@@ -59,8 +69,8 @@ public class InputController : MonoBehaviour
     }
 
     bool IsPlayerHoldingArrow(string arrowValue) {
-        float axisX = Input.GetAxis(axis + "X");
-        float axisY = Input.GetAxis(axis + "Y");
+        float axisX = Input.GetAxis(axis + X_AXIS);
+        float axisY = Input.GetAxis(axis + Y_AXIS);
 
         if (prevArrowKey == UP && axisY == -1 ||
             prevArrowKey == DOWN && axisY == 1 ||
@@ -77,8 +87,8 @@ public class InputController : MonoBehaviour
 
     bool CheckArrow(string arrowValue) {
         string currentArrow;
-        float axisX = Input.GetAxis(axis + "X");
-        float axisY = Input.GetAxis(axis + "Y");
+        float axisX = Input.GetAxis(axis + X_AXIS);
+        float axisY = Input.GetAxis(axis + Y_AXIS);
 
 
         if (arrowValue == UP && axisY == -1) {
@@ -137,10 +147,10 @@ public class InputController : MonoBehaviour
     }
 
     bool CheckTool(int ToolCode) {
-        float button0 = Input.GetAxis(axis + "A");
-        float button1 = Input.GetAxis(axis + "B");
-        float button2 = Input.GetAxis(axis + "C");
-        float button3 = Input.GetAxis(axis + "D");
+        float button0 = Input.GetAxis(axis + BUTTON_1);
+        float button1 = Input.GetAxis(axis + BUTTON_2);
+        float button2 = Input.GetAxis(axis + BUTTON_3);
+        float button3 = Input.GetAxis(axis + BUTTON_4);
 
         if (ToolCode == 1 && button0 == 1)
         {
