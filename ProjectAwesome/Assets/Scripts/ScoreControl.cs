@@ -26,8 +26,9 @@ public class ScoreControl : MonoBehaviour
             var index = 0;
             foreach (bool scoreItem in state.scoreList)
             {
-                
-                Debug.Log(index);
+                if (index > 2) {
+                    index = 2;
+                }
                 Image = transform.GetChild(index).gameObject;
                 if (scoreItem)
                 {
