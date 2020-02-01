@@ -6,15 +6,31 @@ using UnityEngine.SceneManagement;
 
 public class MenuScreenController : MonoBehaviour
 {
+    [SerializeField] public GameSettings settings;
     public InputField playerOneName;
     public InputField playerTwoName;
 
     public void startGame()
     {
-        Debug.Log("Player 1 name: " + playerOneName.text);
-        Debug.Log("Player 2 name: " + playerTwoName.text);
-
+        settings.playerOneName = playerOneName.text;
+        settings.playerTwoName = playerTwoName.text;
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void setEasy()
+    {
+        settings.difficulty = 1;
+    }
+
+    public void setMedium()
+    {
+        settings.difficulty = 2;
+    }
+
+    public void setHard()
+    {
+        settings.difficulty = 3;
     }
 
     public void quitGame()
