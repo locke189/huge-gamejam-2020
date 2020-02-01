@@ -17,7 +17,7 @@ public class InputController : MonoBehaviour
     readonly string RIGHT = "RIGHT";
     readonly string PLAY_STATE = "PLAY";
     readonly string X_AXIS = "X";
-    readonly string Y_AXIS = "PLAY";
+    readonly string Y_AXIS = "Y";
     readonly string BUTTON_1 = "A";
     readonly string BUTTON_2 = "B";
     readonly string BUTTON_3 = "C";
