@@ -13,6 +13,7 @@ public class GameState : ScriptableObject
     public int hits = 0;
     public int maxSets = 2;
     public int sets = 0;
+    public List<bool> scoreList = new List<bool>();
 
     // constants
     public static string PLAY = "PLAY";
@@ -45,11 +46,22 @@ public class GameState : ScriptableObject
 
     public void NewSet() {
         sets++;
+        winPoint();
         if (sets == maxSets) {
             // game over
             // TODO: add event.
         }
     }
+
+    public void winPoint() {
+        scoreList.Add(true);
+    }
+
+    public void losePoint()
+    {
+        scoreList.Add(false);
+    }
+
 
     public void ResetHits() {
         hits = 0;
