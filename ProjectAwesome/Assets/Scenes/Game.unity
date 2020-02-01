@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axis: Joystick1
   state: {fileID: 11400000, guid: 6a2990f808c7443609e442626f666c36, type: 2}
-  debounceTime: 0.5
+  debounceTime: 0.1
 --- !u!4 &95656149
 Transform:
   m_ObjectHideFlags: 0

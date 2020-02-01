@@ -61,14 +61,18 @@ public class InputController : MonoBehaviour
     bool IsPlayerHoldingArrow(string arrowValue) {
         float axisX = Input.GetAxis(axis + "X");
         float axisY = Input.GetAxis(axis + "Y");
-        if (arrowValue == prevArrowKey) {
-            if (axisX == 1 || axisX == -1 || axisY == 1 || axisY == -1)
-            {
-                return true;
-            }
-            prevArrowKey = "";
+
+        if (prevArrowKey == UP && axisY == -1 ||
+            prevArrowKey == DOWN && axisY == 1 ||
+            prevArrowKey == RIGHT && axisX == 1 ||
+            prevArrowKey == LEFT && axisX == -1)
+        {
+            return true;
         }
-        return false;
+        else {
+            prevArrowKey = "";
+            return false;
+        }
     }
 
     bool CheckArrow(string arrowValue) {
