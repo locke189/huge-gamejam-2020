@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ad4e9d35d6949bbacafc3811886e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 0e215587322204f4e90d8fbc2d987217, type: 2}
   WinnerName: {fileID: 6369823}
 --- !u!1001 &880459574
 PrefabInstance:
