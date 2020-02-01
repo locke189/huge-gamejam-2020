@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c4fe537cc3340779f83a562e1b3d40, type: 3}
   m_Name: Main
   m_EditorClassIdentifier: 
-  value: 0
+  arrows:
+  - UP
+  - DOWN
+  - UP
+  - LEFT
+  - RIGHT
+  tools: 0100000001000000010000000300000004000000
+  hits: 0
+  maxSets: 2
+  sets: 4
+  scoreList: 
+  gameStateName: PLAY
