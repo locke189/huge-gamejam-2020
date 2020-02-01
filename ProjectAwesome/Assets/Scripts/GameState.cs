@@ -14,9 +14,13 @@ public class GameState : ScriptableObject
     public int maxSets = 2;
     public int sets = 0;
 
+    // constants
+    static string PLAY = "PLAY";
+
+
     // TODO: define the set of states for the game
     // PLAY: the user is playing sequences
-    public string gameStateName = "PLAY";
+    public string gameStateName = PLAY;
 
 
     public string GetArrow(int index) {
