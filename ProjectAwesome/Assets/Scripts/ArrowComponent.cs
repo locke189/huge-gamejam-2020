@@ -33,18 +33,19 @@ public class ArrowComponent : MonoBehaviour
                 return;
             }
             string currentArrow = state.arrows[i];
+            int currentTool = state.tools[i];
             Vector2 newPosition = new Vector2(highlightPosition.x, highlightPosition.y - (yOffset * i));
             GameObject arrow = Instantiate(ArrowObject, newPosition, getDirection(currentArrow));
             arrowList.Add(arrow);
             arrow.transform.parent = gameObject.transform;
+            arrow.GetComponent<Image>().color = GetColor(currentTool);
         }
         HighlightCurrentArrow();
     }
 
-    public void HighlightCurrentArrow() {
-        int currentColor = state.tools[state.GetHits()];
+    public Color GetColor(int code) {
         Color selectedColor;
-        switch (currentColor)
+        switch (code)
         {
             case 1:
                 selectedColor = color1;
@@ -62,7 +63,12 @@ public class ArrowComponent : MonoBehaviour
                 selectedColor = color1;
                 break;
         }
+        return selectedColor;
+    }
 
+    public void HighlightCurrentArrow() {
+        int currentColor = state.tools[state.GetHits()];
+        Color selectedColor = GetColor(currentColor);
         highlight.color = selectedColor;
     }
 
@@ -92,10 +98,12 @@ public class ArrowComponent : MonoBehaviour
         if ((state.GetHits() + maxArrows - 1) <= state.arrows.Length -1 )
         {
             string currentArrow = state.arrows[state.GetHits() + maxArrows - 1];
+            int currentTool = state.tools[state.GetHits() + maxArrows - 1];
             Vector2 newPosition = new Vector2(highlightPosition.x, highlightPosition.y - (yOffset * (maxArrows - 1)));
             GameObject arrow = Instantiate(ArrowObject, newPosition, getDirection(currentArrow));
             arrowList.Add(arrow);
             arrow.transform.parent = gameObject.transform;
+            arrow.GetComponent<Image>().color = GetColor(currentTool);
         }
     }
 
