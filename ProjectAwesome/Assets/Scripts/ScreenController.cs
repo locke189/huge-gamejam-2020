@@ -30,7 +30,16 @@ public class ScreenController : MonoBehaviour
 	public void LoadNextScreen()
 	{
 		int index = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(index + 1);
+		Debug.Log("next");
+		if (index + 1 > 1)
+		{
+			Debug.Log("next");
+			GameObject splashAudio = GameObject.Find("MusicControllerSplash");
+			splashAudio.GetComponent<AudioSource>().Stop();
+			Destroy(splashAudio);
+		}
+
+		SceneManager.LoadScene(index + 1);
 	}
 
 	public void QuitGame()
