@@ -8,6 +8,8 @@ public class InputController : MonoBehaviour
 
     [SerializeField] string axis = "Joystick1";
     [SerializeField] GameState state;
+    [SerializeField] GameSettings settings;
+    [SerializeField] bool player1;
     [SerializeField] float debounceTime;
     [SerializeField] UnityEvent OnSetComplete;
     [SerializeField] UnityEvent OnGameComplete;
@@ -34,6 +36,8 @@ public class InputController : MonoBehaviour
     private void Start()
     {
         state.ResetHits();
+        state.sets = 0;
+        state.scoreList.Clear();
     }
 
     void Update()
@@ -63,13 +67,21 @@ public class InputController : MonoBehaviour
                     if (state.GetHits() == state.arrows.Length)
                     {
                         state.NewSet();
-                        state.ResetHits();
-                        OnSetComplete.Invoke();
 
                         if (state.sets == state.maxSets)
                         {
+                            if (player1)
+                            {
+                                settings.playerWinner = settings.playerOneName;
+                            }
+                            else {
+                                settings.playerWinner = settings.playerTwoName;
+                            }
                             OnGameComplete.Invoke();
                         }
+
+                        state.ResetHits();
+                        OnSetComplete.Invoke();
                     }
                 }
                 else {

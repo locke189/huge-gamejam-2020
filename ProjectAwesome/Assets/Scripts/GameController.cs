@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        loadSet(settings.difficulty);
+        loadSet();
         //starts the gaming sequence
         onSetupComplete.Invoke();
         state.gameStateName = "PLAY";
@@ -27,7 +27,8 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void loadSet(int dif) {
+    public void loadSet() {
+        int dif = settings.difficulty;
         string[] ArrowSet = ArrowSequence.GenerateArrowSequence(dif);
         int[] ToolSet = ToolSequence.GenerateToolSequence(dif);
         Debug.Log("load set");
@@ -36,6 +37,5 @@ public class GameController : MonoBehaviour
         state.arrows = ArrowSet;
         state.tools = ToolSet;
     }
-
 
 }
