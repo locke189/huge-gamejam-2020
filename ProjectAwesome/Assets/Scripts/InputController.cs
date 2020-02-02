@@ -99,6 +99,32 @@ public class InputController : MonoBehaviour
     {
         float axisX = Input.GetAxis(axis + X_AXIS);
         float axisY = Input.GetAxis(axis + Y_AXIS);
+        bool APress = Input.GetKeyDown(KeyCode.A);
+        bool SPress = Input.GetKeyDown(KeyCode.S);
+        bool DPress = Input.GetKeyDown(KeyCode.D);
+        bool WPress = Input.GetKeyDown(KeyCode.W);
+
+        if (APress)
+        {
+            axisX = -1;
+            Debug.Log("a press" + axisX);
+
+        }
+        else if (DPress)
+        {
+            axisX = 1;
+            Debug.Log("a press" + axisX);
+        }
+        else if (SPress)
+        {
+            axisY = 1;
+            Debug.Log("a press" + axisY);
+        }
+        else if (WPress)
+        {
+            Debug.Log("a press" + axisY);
+            axisY = -1;
+        }
 
         if (axisX == 1 || axisX == -1 || axisY == 1 || axisY == -1) {
             return true;
@@ -128,6 +154,34 @@ public class InputController : MonoBehaviour
         string currentArrow;
         float axisX = Input.GetAxis(axis + X_AXIS);
         float axisY = Input.GetAxis(axis + Y_AXIS);
+
+
+        bool APress = Input.GetKeyDown(KeyCode.A);
+        bool SPress = Input.GetKeyDown(KeyCode.S);
+        bool DPress = Input.GetKeyDown(KeyCode.D);
+        bool WPress = Input.GetKeyDown(KeyCode.W);
+
+        if (APress)
+        {
+            axisX = -1;
+            Debug.Log("a press" + axisX);
+
+        }
+        else if (DPress)
+        {
+            axisX = 1;
+            Debug.Log("a press" + axisX);
+        }
+        else if (SPress)
+        {
+            axisY = 1;
+            Debug.Log("a press" + axisY);
+        }
+        else if (WPress)
+        {
+            Debug.Log("a press" + axisY);
+            axisY = -1;
+        }
 
 
         if (arrowValue == UP && axisY == -1) {
