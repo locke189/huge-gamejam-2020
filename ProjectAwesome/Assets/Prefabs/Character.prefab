@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 0}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -86,13 +86,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stage1:
-  - {fileID: 21300000, guid: 6c1f269376b424fdeae72f063338a4a3, type: 3}
-  - {fileID: 21300000, guid: 7b9602a7faf7144aca43c1547a0b55cb, type: 3}
-  - {fileID: 21300000, guid: 27e10d39eabe647949b64e9dfe5fa29f, type: 3}
+  - {fileID: 21300000, guid: ba0580bcfdfd1466c8af2f28310a921c, type: 3}
+  - {fileID: 21300000, guid: 37f4d20bd30b8456d8e7267a934991e8, type: 3}
+  - {fileID: 21300000, guid: b9015acdd399948fb9a2b24ed33ecab9, type: 3}
   stage2:
-  - {fileID: 21300000, guid: 304c733d7747c43888336ba278581a96, type: 3}
-  - {fileID: 21300000, guid: a66938ad67fb047d28989107e6c6cd2b, type: 3}
-  - {fileID: 21300000, guid: 3bffcf713a651482bbfac837108b4a5c, type: 3}
+  - {fileID: 21300000, guid: d48a49294a57e4894bfeb1f5d347d894, type: 3}
+  - {fileID: 21300000, guid: 0e4ba00ec8d5b4e6c8b3980268fd1d1f, type: 3}
+  - {fileID: 21300000, guid: 92c2a7bf4bf36480d81a2e24a6b93963, type: 3}
   stage3:
   - {fileID: 21300000, guid: 78e48fdff10ac4c9c96ed06946077c83, type: 3}
   - {fileID: 21300000, guid: 32542c1100bb04febb62ff0755e35b1f, type: 3}
