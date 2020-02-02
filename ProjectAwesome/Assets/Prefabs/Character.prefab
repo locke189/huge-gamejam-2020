@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 297642851486998188}
   - component: {fileID: 297642851486998184}
   - component: {fileID: 297642851486998191}
-  - component: {fileID: 297642851486998190}
   - component: {fileID: 297642851486998189}
   m_Layer: 0
   m_Name: Character
@@ -74,24 +73,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!143 &297642851486998190
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297642851486998179}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &297642851486998189
 MonoBehaviour:
   m_ObjectHideFlags: 0
