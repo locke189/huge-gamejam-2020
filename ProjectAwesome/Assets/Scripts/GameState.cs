@@ -46,11 +46,13 @@ public class GameState : ScriptableObject
 
     public void winPoint() {
         scoreList.Add(true);
+        ResetHits();
     }
 
     public void losePoint()
     {
         scoreList.Add(false);
+        ResetHits();
     }
 
 
