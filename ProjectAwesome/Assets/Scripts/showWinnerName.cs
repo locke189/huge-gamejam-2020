@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class showWinnerName : MonoBehaviour
 {
     [SerializeField] public GameSettings settings;
-    public Text WinnerName;
+    public TMP_InputField WinnerName;
 
     private void Start()
     {
