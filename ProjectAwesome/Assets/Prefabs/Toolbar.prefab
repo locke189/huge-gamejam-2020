@@ -51,6 +51,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tool2
       objectReference: {fileID: 0}
+    - target: {fileID: 3903709473943783216, guid: fbb1b43362aee4d6ca448c156715c244,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e1720ba230f744485b153cde75c92a6e,
+        type: 3}
     - target: {fileID: 4737460775381006154, guid: fbb1b43362aee4d6ca448c156715c244,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,6 +231,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tool4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903709473943783216, guid: fbb1b43362aee4d6ca448c156715c244,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0730ff3f1e3a444d9a24ae2f8b32b6a9,
+        type: 3}
+    - target: {fileID: 4549733222242229091, guid: fbb1b43362aee4d6ca448c156715c244,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4549733222242229091, guid: fbb1b43362aee4d6ca448c156715c244,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4737460775381006154, guid: fbb1b43362aee4d6ca448c156715c244,
         type: 3}
@@ -401,6 +423,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tool3
       objectReference: {fileID: 0}
+    - target: {fileID: 3903709473943783216, guid: fbb1b43362aee4d6ca448c156715c244,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fa567efe4e844161a5a4b019c06d326,
+        type: 3}
     - target: {fileID: 4737460775381006154, guid: fbb1b43362aee4d6ca448c156715c244,
         type: 3}
       propertyPath: m_LocalPosition.x
