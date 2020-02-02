@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e10a5d93ed784cc9a064a3084dee712, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
+  difficulty: 1
+  playerOneName: Player 1
+  playerTwoName: Player 2
+  playerWinner: WinnerName

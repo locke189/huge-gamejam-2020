@@ -14,13 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrows:
   - UP
-  - DOWN
-  - UP
   - LEFT
-  - RIGHT
-  tools: 0100000001000000010000000300000004000000
+  - LEFT
+  - DOWN
+  - DOWN
+  - LEFT
+  - DOWN
+  - DOWN
+  - DOWN
+  - DOWN
+  tools: 03000000020000000200000003000000020000000300000003000000030000000200000002000000
   hits: 0
   maxSets: 2
-  sets: 4
-  scoreList: 
+  sets: 2
+  scoreList: 010101
   gameStateName: PLAY
