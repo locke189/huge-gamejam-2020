@@ -9,9 +9,12 @@ public class ArrowComponent : MonoBehaviour
     [SerializeField] GameState state;
     [SerializeField] int maxArrows = 4;
     [SerializeField] float xOffset = 100f;
-    [SerializeField] float yOffset = 400f;
+    [SerializeField] float yOffset = 500f;
     [SerializeField] GameObject ArrowObject;
-
+    [SerializeField] Color color1;
+    [SerializeField] Color color2;
+    [SerializeField] Color color3;
+    [SerializeField] Color color4;
 
     Image highlight;
     Vector2 highlightPosition;
@@ -35,12 +38,39 @@ public class ArrowComponent : MonoBehaviour
             arrowList.Add(arrow);
             arrow.transform.parent = gameObject.transform;
         }
+        HighlightCurrentArrow();
+    }
+
+    public void HighlightCurrentArrow() {
+        int currentColor = state.tools[state.GetHits()];
+        Color selectedColor;
+        switch (currentColor)
+        {
+            case 1:
+                selectedColor = color1;
+                break;
+            case 2:
+                selectedColor = color2;
+                break;
+            case 3:
+                selectedColor = color3;
+                break;
+            case 4:
+                selectedColor = color4;
+                break;
+            default:
+                selectedColor = color1;
+                break;
+        }
+
+        highlight.color = selectedColor;
     }
 
     public void MoveUp() {
         if (state.GetHits() < state.arrows.Length) {
             RemoveFirstElement();
             ShiftUpElements();
+            HighlightCurrentArrow();
             AddNewElement();
         }
     }
