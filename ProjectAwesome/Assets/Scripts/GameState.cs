@@ -16,6 +16,7 @@ public class GameState : ScriptableObject
     public List<bool> scoreList = new List<bool>();
 
     // constants
+    public static string SETUP = "SETUP";
     public static string PLAY = "PLAY";
 
 
