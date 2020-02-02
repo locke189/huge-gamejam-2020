@@ -43,6 +43,14 @@ public class MenuScreenController : MonoBehaviour
         }
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameObject splashAudio = GameObject.Find("MusicControllerSplash");
+        Debug.Log("next");
+        if (splashAudio)
+        {
+            Debug.Log("next2");
+            splashAudio.GetComponent<AudioSource>().Stop();
+            Destroy(splashAudio);
+        }
     }
 
     public void setEasy()
