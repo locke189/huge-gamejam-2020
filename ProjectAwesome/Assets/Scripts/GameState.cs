@@ -41,6 +41,7 @@ public class GameState : ScriptableObject
     public void NewSet() {
         sets++;
         winPoint();
+        ResetHits();
     }
 
     public void winPoint() {

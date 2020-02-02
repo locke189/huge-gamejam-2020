@@ -23,18 +23,22 @@ public class Character : MonoBehaviour
     {
         float partial = calculatePercentage(state.GetHits(), state.arrows.Length);
 
-        if (partial < 50)
+        if (partial < 30)
         {
-            imageComponent.sprite = getSprite(state.sets, 0);
+            imageComponent.sprite = getSprite(GetSet(), 0);
         }
 
-        if (partial > 50 && partial < 90) {
-            imageComponent.sprite = getSprite(state.sets, 1);
+        if (partial > 30 && partial < 60) {
+            imageComponent.sprite = getSprite(GetSet(), 1);
         }
-        if (partial > 90 )
+        if (partial > 60 )
         {
-            imageComponent.sprite = getSprite(state.sets, 2);
+            imageComponent.sprite = getSprite(GetSet(), 2);
         }
+    }
+
+    int GetSet() {
+        return state.scoreList.Count;
     }
 
     float calculatePercentage(int partial, float total)
