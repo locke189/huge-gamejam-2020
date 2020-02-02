@@ -36,22 +36,11 @@ public class GameState : ScriptableObject
 
     public void NewHit() {
         hits++;
-        // win conditon
-        if (GetHits() >= arrows.Length)
-        {
-            ResetHits();
-            NewSet();
-            // TODO: add event.
-        }
     }
 
     public void NewSet() {
         sets++;
         winPoint();
-        if (sets == maxSets) {
-            // game over
-            // TODO: add event.
-        }
     }
 
     public void winPoint() {

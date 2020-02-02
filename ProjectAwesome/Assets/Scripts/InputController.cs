@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InputController : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class InputController : MonoBehaviour
     [SerializeField] string axis = "Joystick1";
     [SerializeField] GameState state;
     [SerializeField] float debounceTime;
+    [SerializeField] UnityEvent OnSetComplete;
+    [SerializeField] UnityEvent OnGameComplete;
+    [SerializeField] UnityEvent OnHit;
+    [SerializeField] UnityEvent OnHitReset;
+
+
     string prevArrowKey;
 
     // Constants
@@ -33,7 +40,9 @@ public class InputController : MonoBehaviour
     {
         if (state.gameStateName == PLAY_STATE)
         {
-            StartCoroutine(CheckSequence(state.GetArrow(state.hits),state.GetTool(state.hits)));
+            //Debug.Log(state.GetArrow(state.GetHits()));
+            //Debug.Log(state.GetTool(state.GetHits()));
+            StartCoroutine(CheckSequence(state.GetArrow(state.GetHits()),state.GetTool(state.GetHits())));
         }
     }
 
@@ -46,11 +55,29 @@ public class InputController : MonoBehaviour
                 if (CheckArrow(arrow) && CheckTool(tool))
                 {
                     Debug.Log("new hit");
+                    Debug.Log(state.GetArrow(state.GetHits()));
+                    Debug.Log(state.GetTool(state.GetHits()));
                     state.NewHit();
+                    OnHit.Invoke();
+              
+                    if (state.GetHits() == state.arrows.Length)
+                    {
+                        state.NewSet();
+                        state.ResetHits();
+                        OnSetComplete.Invoke();
+
+                        if (state.sets == state.maxSets)
+                        {
+                            OnGameComplete.Invoke();
+                        }
+                    }
                 }
                 else {
                     Debug.Log("Miss");
+                    Debug.Log(state.GetArrow(state.GetHits()));
+                    Debug.Log(state.GetTool(state.GetHits()));
                     state.ResetHits();
+                    OnHitReset.Invoke();
                 }
             }
         }
