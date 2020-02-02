@@ -4,7 +4,7 @@ using TMPro;
 public class showWinnerName : MonoBehaviour
 {
     [SerializeField] public GameSettings settings;
-    public TMP_InputField WinnerName;
+    public TMP_Text WinnerName;
 
     private void Start()
     {

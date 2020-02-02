@@ -697,7 +697,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!1 &743792583
 GameObject:
@@ -2120,7 +2120,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &1780814312 stripped
 RectTransform:
@@ -2813,6 +2813,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 297642851486998189, guid: 90b81c5b675024963a3db3ae090a5245,
+        type: 3}
+      propertyPath: m_fadeDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 297642851486998189, guid: 90b81c5b675024963a3db3ae090a5245,
+        type: 3}
+      propertyPath: m_ignoreTimeScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90b81c5b675024963a3db3ae090a5245, type: 3}
