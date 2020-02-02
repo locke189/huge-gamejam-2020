@@ -46,14 +46,16 @@ public class InputController : MonoBehaviour
         {
             //Debug.Log(state.GetArrow(state.GetHits()));
             //Debug.Log(state.GetTool(state.GetHits()));
-            StartCoroutine(CheckSequence(state.GetArrow(state.GetHits()),state.GetTool(state.GetHits())));
+            StartCoroutine(CheckSequence(state.GetArrow(state.GetHits()), state.GetTool(state.GetHits())));
         }
     }
 
-    IEnumerator CheckSequence(string arrow, int tool) {
+    IEnumerator CheckSequence(string arrow, int tool)
+    {
         yield return new WaitForSeconds(debounceTime);
 
-        if (!IsPlayerHoldingArrow(arrow)) {
+        if (!IsPlayerHoldingArrow(arrow))
+        {
             if (CheckArrowPressed())
             {
                 if (CheckArrow(arrow) && CheckTool(tool))
@@ -63,7 +65,7 @@ public class InputController : MonoBehaviour
                     Debug.Log(state.GetTool(state.GetHits()));
                     state.NewHit();
                     OnHit.Invoke();
-              
+
                     if (state.GetHits() == state.arrows.Length)
                     {
                         state.NewSet();
@@ -74,7 +76,8 @@ public class InputController : MonoBehaviour
                             {
                                 settings.playerWinner = settings.playerOneName;
                             }
-                            else {
+                            else
+                            {
                                 settings.playerWinner = settings.playerTwoName;
                             }
                             OnGameComplete.Invoke();
@@ -84,7 +87,8 @@ public class InputController : MonoBehaviour
                         OnSetComplete.Invoke();
                     }
                 }
-                else {
+                else
+                {
                     Debug.Log("Miss");
                     Debug.Log(state.GetArrow(state.GetHits()));
                     Debug.Log(state.GetTool(state.GetHits()));
@@ -99,15 +103,43 @@ public class InputController : MonoBehaviour
     {
         float axisX = Input.GetAxis(axis + X_AXIS);
         float axisY = Input.GetAxis(axis + Y_AXIS);
+        bool APress = Input.GetKeyDown(KeyCode.A);
+        bool SPress = Input.GetKeyDown(KeyCode.S);
+        bool DPress = Input.GetKeyDown(KeyCode.D);
+        bool WPress = Input.GetKeyDown(KeyCode.W);
 
-        if (axisX == 1 || axisX == -1 || axisY == 1 || axisY == -1) {
+        if (APress)
+        {
+            axisX = -1;
+            Debug.Log("a press" + axisX);
+
+        }
+        else if (DPress)
+        {
+            axisX = 1;
+            Debug.Log("a press" + axisX);
+        }
+        else if (SPress)
+        {
+            axisY = 1;
+            Debug.Log("a press" + axisY);
+        }
+        else if (WPress)
+        {
+            Debug.Log("a press" + axisY);
+            axisY = -1;
+        }
+
+        if (axisX == 1 || axisX == -1 || axisY == 1 || axisY == -1)
+        {
             return true;
         }
 
         return false;
     }
 
-    bool IsPlayerHoldingArrow(string arrowValue) {
+    bool IsPlayerHoldingArrow(string arrowValue)
+    {
         float axisX = Input.GetAxis(axis + X_AXIS);
         float axisY = Input.GetAxis(axis + Y_AXIS);
 
@@ -118,19 +150,50 @@ public class InputController : MonoBehaviour
         {
             return true;
         }
-        else {
+        else
+        {
             prevArrowKey = "";
             return false;
         }
     }
 
-    bool CheckArrow(string arrowValue) {
+    bool CheckArrow(string arrowValue)
+    {
         string currentArrow;
         float axisX = Input.GetAxis(axis + X_AXIS);
         float axisY = Input.GetAxis(axis + Y_AXIS);
 
 
-        if (arrowValue == UP && axisY == -1) {
+        bool APress = Input.GetKeyDown(KeyCode.A);
+        bool SPress = Input.GetKeyDown(KeyCode.S);
+        bool DPress = Input.GetKeyDown(KeyCode.D);
+        bool WPress = Input.GetKeyDown(KeyCode.W);
+
+        if (APress)
+        {
+            axisX = -1;
+            Debug.Log("a press" + axisX);
+
+        }
+        else if (DPress)
+        {
+            axisX = 1;
+            Debug.Log("a press" + axisX);
+        }
+        else if (SPress)
+        {
+            axisY = 1;
+            Debug.Log("a press" + axisY);
+        }
+        else if (WPress)
+        {
+            Debug.Log("a press" + axisY);
+            axisY = -1;
+        }
+
+
+        if (arrowValue == UP && axisY == -1)
+        {
             currentArrow = UP;
             if (currentArrow != prevArrowKey)
             {
@@ -142,7 +205,8 @@ public class InputController : MonoBehaviour
                 return false;
             }
         }
-        else if (arrowValue == DOWN && axisY == 1) {
+        else if (arrowValue == DOWN && axisY == 1)
+        {
             currentArrow = DOWN;
             if (currentArrow != prevArrowKey)
             {
@@ -185,7 +249,8 @@ public class InputController : MonoBehaviour
         return false;
     }
 
-    bool CheckTool(int ToolCode) {
+    bool CheckTool(int ToolCode)
+    {
         float button0 = Input.GetAxis(axis + BUTTON_1);
         float button1 = Input.GetAxis(axis + BUTTON_2);
         float button2 = Input.GetAxis(axis + BUTTON_3);
