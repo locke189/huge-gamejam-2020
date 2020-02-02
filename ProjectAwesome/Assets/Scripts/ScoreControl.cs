@@ -7,6 +7,7 @@ public class ScoreControl : MonoBehaviour
 {
 
     [SerializeField] GameState state;
+    public Sprite scoreWinSprite;
 
     void Start()
     {
@@ -20,10 +21,10 @@ public class ScoreControl : MonoBehaviour
 
     void validateScore() {
         GameObject Image;
-        
+
         if (state.scoreList.Count > 0)
         {
-            var index = 0;
+            var index = 1;
             foreach (bool scoreItem in state.scoreList)
             {
                 if (index > 2) {
@@ -32,11 +33,7 @@ public class ScoreControl : MonoBehaviour
                 Image = transform.GetChild(index).gameObject;
                 if (scoreItem)
                 {
-                    Image.GetComponent<Image>().color = new Color(0, 255, 0, 1);
-                }
-                else
-                {
-                    Image.GetComponent<Image>().color = new Color(255, 0, 0, 1);
+                    Image.GetComponent<Image>().sprite = scoreWinSprite;
                 }
                 index++;
             }
